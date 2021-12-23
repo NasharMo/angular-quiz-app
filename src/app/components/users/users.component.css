@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+
+.mat-row:hover {
+  background-color: #e8e8e8;
+  cursor: pointer;
+}
+
+.mat-header-cell.mat-column-avatar {
+  text-align: center;
+}
+
+.mat-column-avatar {
+  width: 10%;
+  padding-right: 25px;
+}
+
+.mat-column-id {
+  width: 5%;
+}
+
+.mat-column-email {
+  width: 50%;
+}
+
+.mat-cell img {
+  border-radius: 50%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: block;
+}

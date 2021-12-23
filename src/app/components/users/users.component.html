@@ -1,0 +1,47 @@
+<mat-form-field class="example-form-field">
+  <mat-label>Search By ID</mat-label>
+  <input matInput type="text" [(ngModel)]="searchFilter" (ngModelChange)="search($event)">
+</mat-form-field>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="avatar">
+      <th mat-header-cell *matHeaderCellDef> Avatar </th>
+      <td mat-cell *matCellDef="let element"> <img [src]="element.avatar" [alt]="element.first_name + ' ' + element.last_name"> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;" (click)="goToDetails(element.id)"></tr>
+  </table>
+
+  <mat-paginator *ngIf="dataSource.data.length > 1"
+    [pageIndex]="response.page -1"
+    [length]="response.total"
+    [pageSize]="response.per_page"
+    (page)="updatePage($event.pageIndex)"
+  >
+  </mat-paginator>
+
+</div>

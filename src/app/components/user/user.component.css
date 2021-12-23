@@ -1,0 +1,13 @@
+.mat-icon-button {
+  float: right;
+}
+
+.user-card {
+  height: fit-content;
+  width: fit-content;
+}
+
+.user-card img {
+  width: 25em;
+  height: 25em;
+}
